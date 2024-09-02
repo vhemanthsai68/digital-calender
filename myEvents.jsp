@@ -18,7 +18,7 @@
             Connection c = (Connection)application.getAttribute("dbcon");
             Statement s = c.createStatement();
             String id1 = (String)session.getAttribute("id");
-            ResultSet r = s.executeQuery("select * from events where id='"+id1+"'");
+            ResultSet r = s.executeQuery("select * from events where id='"+id1+"' order by edate ASC, etime ASC");
             r.next();
             if(r.getString("id") != null){
         %>
